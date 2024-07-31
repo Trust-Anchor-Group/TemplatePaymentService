@@ -1,5 +1,4 @@
-﻿using Paiwise;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Waher.Events;
 using Waher.IoTGateway;
 
@@ -11,6 +10,9 @@ namespace TAG.Payments.Template
 	/// <remarks>
 	/// The <see cref="IConfigurableModule"/> interface controls the service life cycle, and how the service is presented to users, 
 	/// both clients that want to use the payment service, as well as administrators, who need to configure the service.
+	/// 
+	/// Classes implementing this interface, containing a default constructor, will be found and instantiated using the
+	/// <see cref="Waher.Runtime.Inventory.Types"/> static class.
 	/// </remarks>
 	public class ServiceModule : IConfigurableModule
 	{

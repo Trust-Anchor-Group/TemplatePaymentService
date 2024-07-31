@@ -4,6 +4,9 @@
 	<Folder name="Root">
 		<Folder name="Template">
 			<Content fileName="PaymentTemplate.md"/>
+			<Folder name="Images">
+				<Content fileName="Everaldo-Crystal-Clear-Mimetype-vector-gfx.128.png"/>
+			</Folder>
 		</Folder>
 	</Folder>
 </Module>

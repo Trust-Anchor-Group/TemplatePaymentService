@@ -14,6 +14,7 @@ Steps to create a custom payment service
 	* Follow naming conventions for libraries, to avoid confusion when navigating code in the Neuron(R): `COMPANY.CATEGORY.SERVICE[.SUBSERVICE]`.
 3.  Implement the payment interfaces, as shown in code.
 	* Reuse libraries used by the Neuron(R) as much as possible, to simplify distribution and facilitate fixes and updates.
+	* Go through all comments in code marked with `TODO`.
 4.  Create Manifest file containing all assembly and content files necessary to install service on a Neuron(R).
 5.  Create an installable package that can be distributed and installed on TAG Neurons.
 6.  Compile and test on a local development Neuron(R).

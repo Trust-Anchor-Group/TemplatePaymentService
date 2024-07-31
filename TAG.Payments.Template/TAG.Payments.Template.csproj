@@ -5,11 +5,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Root\Template\Images\Everaldo-Crystal-Clear-Mimetype-vector-gfx.128.png" />
     <None Remove="Root\Template\PaymentTemplate.md" />
     <None Remove="TAG.Payments.Template.manifest" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Root\Template\Images\Everaldo-Crystal-Clear-Mimetype-vector-gfx.128.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Root\Template\PaymentTemplate.md">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
