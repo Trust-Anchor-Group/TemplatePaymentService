@@ -35,8 +35,8 @@ Steps to create a custom payment service
 	* Reuse libraries used by the Neuron(R) as much as possible, to simplify distribution and facilitate fixes and updates.
 	* Go through all comments in code marked with `TODO`.
 
-8.  Update the Manifest file so it contains all referenced assemblies and content files necessary to install service on a Neuron(R). You do
-	not need to reference assemblies or content files that are part of the Neuron(R) distribution itself.
+8.  Update the Manifest file so it contains all referenced assemblies and content files and folders necessary to install service on a Neuron(R). 
+	You do not need to reference assemblies or content files that are part of the Neuron(R) distribution itself.
 
 9.  Create an installable package that can be distributed and installed on TAG Neurons.
 
