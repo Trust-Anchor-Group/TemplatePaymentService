@@ -5,16 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Root\Template\Images\Everaldo-Crystal-Clear-Mimetype-vector-gfx.128.png" />
-    <None Remove="Root\Template\PaymentTemplate.md" />
+    <None Remove="Root\TemplatePayment\Images\Everaldo-Crystal-Clear-Mimetype-vector-gfx.128.png" />
+    <None Remove="Root\TemplatePayment\PaymentTemplate.md" />
     <None Remove="TAG.Payments.Template.manifest" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Root\Template\Images\Everaldo-Crystal-Clear-Mimetype-vector-gfx.128.png">
+    <Content Include="Root\TemplatePayment\Images\Everaldo-Crystal-Clear-Mimetype-vector-gfx.128.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Root\Template\PaymentTemplate.md">
+    <Content Include="Root\TemplatePayment\PaymentTemplate.md">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="TAG.Payments.Template.manifest">

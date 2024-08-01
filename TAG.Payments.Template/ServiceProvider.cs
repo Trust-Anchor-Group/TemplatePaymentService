@@ -51,7 +51,7 @@ namespace TAG.Payments.Template
 		/// <summary>
 		/// Icon URL
 		/// </summary>
-		public string IconUrl => Gateway.GetUrl("/Template/Images/Everaldo-Crystal-Clear-Mimetype-vector-gfx.128.png"); // TODO: Replace to a correct representation of the service provider.
+		public string IconUrl => Gateway.GetUrl("/TemplatePayment/Images/Everaldo-Crystal-Clear-Mimetype-vector-gfx.128.png"); // TODO: Replace to a correct representation of the service provider.
 
 		/// <summary>
 		/// Width of icon, in pixels.

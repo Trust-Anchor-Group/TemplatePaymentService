@@ -77,7 +77,7 @@ namespace TAG.Payments.Template
 		{
 			return Task.FromResult(new IConfigurablePage[]
 				{
-					new ConfigurablePage("Payment Template", "/Template/PaymentTemplate.md", RequiredPrivilege)
+					new ConfigurablePage("Payment Template", "/TemplatePayment/PaymentTemplate.md", RequiredPrivilege)
 				});
 		}
 
