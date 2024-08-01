@@ -96,9 +96,10 @@ files of the `TemplatePaymentService` solution is run with it.
 
 To simplify development, once the project is cloned, add a `FileFolder` reference to your repository folder in your 
 [gateway.config file](https://lab.tagroot.io/Documentation/IoTGateway/GatewayConfig.md). This allows you to test and run your changes to 
-Markdown and Javascript immediately, without having to synchronize the folder contents with an external host, or recompile or go through 
-the trouble of generating a distributable software package just for testing purposes. Changes you make in .NET can be applied in runtime
-if you the *Hot Reload* permits, otherwise you need to recompile and re-run the application again.
+Markdown, [back-end script](https://lab.tagroot.io/Script.md) and Javascript immediately, without having to synchronize the folder contents 
+with an external host, or recompile or go through the trouble of generating a distributable software package just for testing purposes. 
+Changes you make in .NET can be applied in runtime if you the *Hot Reload* permits, otherwise you need to recompile and re-run the application 
+again.
 
 Example of how to point a web folder to your project folder:
 
