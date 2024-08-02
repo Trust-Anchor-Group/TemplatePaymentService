@@ -111,6 +111,36 @@ a protection by themselves, as they are considered known. The Private Key howeve
 including cloud storage, online repositories, etc. If anyone gets access to the private key, they will be able to create a counterfit package
 of the same name.
 
+### Generating package
+
+Once you are ready to create the installable package, you use the `Waher.Utility.Install` tool to create a distributable package, and the
+`Waher.Utility.Sign` tool to sign it and create a signature file. The following Command-Line prompt (Windows) provides an example of how this
+can be done. Here, it is assumed you are located in the `C:\My Projects` folder on a Windows machine, and use the tools from the compiled
+[IoT Gateway](https://github.com/PeterWaher/IoTGateway) repository. You can likewise use the same tools from an installed version of the
+TAG Neuron(R) to do this.
+
+```
+IoTGateway\Utilities\Waher.Utility.Install\bin\Release\PublishOutput\win-x86\Waher.Utility.Install.exe
+	-p TAG.ContentServiceTemplate.package -k [AESKEY]
+	-m TemplateContentOnlyPackage\ContentServiceTemplate.manifest
+
+IoTGateway\Utilities\Waher.Utility.Sign\bin\Release\PublishOutput\win-x86\Waher.Utility.Sign.exe 
+	-c ed448 
+	-priv [PRIVKEY]
+	-o TAG.ContentServiceTemplate.signature
+	-s TAG.ContentServiceTemplate.package
+```
+
+**Note**: The command line example above are only two commands, shown on multiple rows, for readability.
+
+**Note 2**: You need to replace `[AESKEY]` with the value of the `AesKey` generated using the script in the previous section. Likewise, you need
+to replace `[PRIVKEY]` with the value of `PrivKey`.
+
+Once the `.package` and `.signature` files are generated, you can upload them to a test Neuron(R). The package will be automatically distributed
+to any connected child neurons, recursively. If the signature in the `.signature` file validates using any public key used on a Neuron(R) where
+a previous package with the same name has been installed, it will be accepted, otherwise rejected. Depending on update settings on the Neuron(R),
+the package will be installed automatically, installed with a delay, or deferred to the operator for manual update or install (the default).
+
 Building, Compiling & Debugging
 ----------------------------------
 
