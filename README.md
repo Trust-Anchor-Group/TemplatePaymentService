@@ -50,7 +50,8 @@ Steps to create a custom payment service
 
 14. Provide a correct license for the repository.
 
-## Projects
+Projects
+-----------
 
 The solution contains the following C# projects:
 
@@ -58,7 +59,8 @@ The solution contains the following C# projects:
 |:-----------------------------|:------------------|:------------|
 | `TAG.Payments.Template`      | .NET Standard 2.0 | Payment Mock service that works as a good starting point for developing new payment services for the TAG Neuron(R). |
 
-## Nugets
+Nugets
+---------
 
 The following external nugets are used. They faciliate common programming tasks, and enables the service to be hosted on the 
 [TAG Neuron](https://lab.tagroot.io/Documentation/Index.md) without conflicts. For a list of general nugets available that can
@@ -74,7 +76,8 @@ be used, see the [IoT Gateway repository](https://github.com/PeterWaher/IoTGatew
 | [Waher.Runtime.Inventory](https://www.nuget.org/packages/Waher.Runtime.Inventory/) | Maintains an inventory of type definitions in the runtime environment, and permits easy instantiation of suitable classes, and inversion of control (IoC). |
 | [Waher.Runtime.Settings](https://www.nuget.org/packages/Waher.Runtime.Settings/)   | Provides easy access to persistent settings. |
 
-## Installable Package
+Installable Package
+----------------------
 
 To create a package, that can be distributed or installed, you begin by creating a *manifest file*. The `TAG.Payments.Template` project 
 has a manifest file called `TAG.Payments.Template.manifest`. It defines the assemblies and content files and folders included in the package. 
@@ -82,7 +85,34 @@ You then use the `Waher.Utility.Install` and `Waher.Utility.Sign` command-line t
 repository, to create a package file and cryptographically sign it for secure distribution across the Neuron network. These tools are also
 available in the installation folder of the Neuron(R) distribution.
 
-## Building, Compiling & Debugging
+### Generating Keys
+
+To sign and distribute a package you will need a *public* and *private* key pair. The private key is used for signing the package, and the
+public key is used as part of the key required to install a package. Each time you distribute a new package, it must be signed using the same
+private key, or the Neuron(R) receiving the new package will discard it. Each new package received is tested if it has been signed using the
+same private key. Only if the signature of the new package matches the public key of the installed version, will the new package be accepted
+as an update to the installed package.
+
+You will also need an AES key. The package is also encrypted using the symmetric AES cipher. This key is mainly used for obfuscating the
+contents of a package.
+
+To generate a new public and private key pair, as well as the AES key, you can execute the following script from a script prompt on the Neuron(R). 
+You can find it from the Admin page, in the Lab section. The *installation key* is then the concatenation of `PubKey` and `AesKey`.
+
+```
+Key:=Ed448();
+printline("PubKey: "+Base64Encode(Key.PublicKey));
+printline("PrivKey: "+select /default:EllipticCurve/@d from Xml(Key.Export()));
+printline("AesKey: "+Hashes.BinaryToString(Waher.IoTGateway.Gateway.NextBytes(16)));
+```
+
+**Security Note**: The Public Key and AES Keys can be distributed together with the package to third parties for installation. They do not represent
+a protection by themselves, as they are considered known. The Private Key however, **must not** be distributed or stored in unsecure locations, 
+including cloud storage, online repositories, etc. If anyone gets access to the private key, they will be able to create a counterfit package
+of the same name.
+
+Building, Compiling & Debugging
+----------------------------------
 
 The repository assumes you have the [IoT Gateway](https://github.com/PeterWaher/IoTGateway) repository cloned in a folder called
 `C:\My Projects\IoT Gateway`, and that this repository is placed in `C:\My Projects\TemplatePaymentService`. You can place the
@@ -92,7 +122,8 @@ profiles to match the installation folder. To run the application, you select th
 project. It will execute the console version of the [IoT Gateway](https://github.com/PeterWaher/IoTGateway), and make sure the compiled 
 files of the `TemplatePaymentService` solution is run with it.
 
-### Gateway.config
+Gateway.config
+-----------------
 
 To simplify development, once the project is cloned, add a `FileFolder` reference to your repository folder in your 
 [gateway.config file](https://lab.tagroot.io/Documentation/IoTGateway/GatewayConfig.md). This allows you to test and run your changes to 
