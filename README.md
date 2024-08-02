@@ -1,13 +1,13 @@
 Payment Service (Template)
 =============================
 
-This repository provides a template solution containing a mock payment service. The solution can be forked by developers who want to 
-create a custom payment service for the TAG Neuron(R).
+This repository provides a template solution containing a mock payment service. Developers who want to create a custom payment service for the 
+TAG Neuron(R) can use this repository as a template.
 
 Steps to create a custom payment service
 --------------------------------------------
 
-1.  Fork this repository
+1.  Create a new repository based on this template repository
 	* Follow naming conventions for repositories, to make the repository easy to find. A Tag Service running on the TAG Neuron(R) typically
 	resides in a repository named `NeuronSERVICE`, where `SERVICE` is a short name for the service being implemented.
 	* It has been assumed the repository will be cloned to `C:\My Projects\TemplatePaymentService`, see build events below.
