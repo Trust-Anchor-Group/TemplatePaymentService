@@ -10,7 +10,7 @@ Login: /Login.md
 
 ========================================================================
 
-<form action="Settings.md" method="post">
+<form action="PaymentTemplate.md" method="post">
 <fieldset>
 <legend>Template settings</legend>
 
