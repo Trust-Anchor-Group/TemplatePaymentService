@@ -119,7 +119,7 @@ namespace TAG.Payments.Template
 		public Task<PaymentResult> BuyEDaler(IDictionary<CaseInsensitiveString, object> ContractParameters,
 			IDictionary<CaseInsensitiveString, CaseInsensitiveString> IdentityProperties,
 			decimal Amount, string Currency, string SuccessUrl, string FailureUrl, string CancelUrl,
-			ClientUrlEventHandler ClientUrlCallback, object State)
+			EventHandlerAsync<ClientUrlEventArgs> ClientUrlCallback, object State)
 		{
 			Log.Debug("User attempting to buy eDaler(R).",
 				new KeyValuePair<string, object>("Amount", Amount),
@@ -143,7 +143,7 @@ namespace TAG.Payments.Template
 		/// contract to sign.</returns>
 		public Task<IDictionary<CaseInsensitiveString, object>[]> GetPaymentOptionsForBuyingEDaler(
 			IDictionary<CaseInsensitiveString, CaseInsensitiveString> IdentityProperties,
-			string SuccessUrl, string FailureUrl, string CancelUrl, ClientUrlEventHandler ClientUrlCallback, object State)
+			string SuccessUrl, string FailureUrl, string CancelUrl, EventHandlerAsync<ClientUrlEventArgs> ClientUrlCallback, object State)
 		{
 			// TODO: Service can return a set of parameters that can be used to prefill the smart contract. Key names must match parameter
 			//       names in the contract. Multiple dictionaries can be returned, each one representing one option, that the user can select
@@ -191,7 +191,7 @@ namespace TAG.Payments.Template
 		/// <returns>Result of operation.</returns>
 		public Task<PaymentResult> SellEDaler(IDictionary<CaseInsensitiveString, object> ContractParameters,
 			IDictionary<CaseInsensitiveString, CaseInsensitiveString> IdentityProperties,
-			decimal Amount, string Currency, string SuccessUrl, string FailureUrl, string CancelUrl, ClientUrlEventHandler ClientUrlCallback, object State)
+			decimal Amount, string Currency, string SuccessUrl, string FailureUrl, string CancelUrl, EventHandlerAsync<ClientUrlEventArgs> ClientUrlCallback, object State)
 		{
 			Log.Debug("User attempting to sell eDaler(R).",
 				new KeyValuePair<string, object>("Amount", Amount),
@@ -214,7 +214,7 @@ namespace TAG.Payments.Template
 		/// <returns>Array of dictionaries, each dictionary representing a set of parameters that can be selected in the contract to sign.</returns>
 		public Task<IDictionary<CaseInsensitiveString, object>[]> GetPaymentOptionsForSellingEDaler(
 			IDictionary<CaseInsensitiveString, CaseInsensitiveString> IdentityProperties,
-			string SuccessUrl, string FailureUrl, string CancelUrl, ClientUrlEventHandler ClientUrlCallback, object State)
+			string SuccessUrl, string FailureUrl, string CancelUrl, EventHandlerAsync<ClientUrlEventArgs> ClientUrlCallback, object State)
 		{
 			// TODO: Service can return a set of parameters that can be used to prefill the smart contract. Key names must match parameter
 			//       names in the contract. Multiple dictionaries can be returned, each one representing one option, that the user can select
@@ -245,7 +245,7 @@ namespace TAG.Payments.Template
 		/// <param name="State">State object to pass on the callback method.</param>
 		/// <returns>Result of operation.</returns>
 		public Task<PaymentResult> Pay(decimal Amount, string Currency, string Description, string SuccessUrl, string FailureUrl,
-			string CancelUrl, ClientUrlEventHandler ClientUrlCallback, object State)
+			string CancelUrl, EventHandlerAsync<ClientUrlEventArgs> ClientUrlCallback, object State)
 		{
 			Log.Debug("User attempting to perform a payment.",
 				new KeyValuePair<string, object>("Amount", Amount),
