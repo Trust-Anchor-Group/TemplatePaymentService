@@ -23,7 +23,7 @@ Steps to create a custom payment service
 	Visual Studio when debugging. Stop the service if it started automatically after installation.
 	* Update the *post build events* so they refer to the tools available in the Neuron installation folder.
 	* Alternatively, clone the [IoT Gateway repository](https://github.com/PeterWaher/IoTGateway) and compile it. In the post build events, it is 
-	assumed it is cloned to `C:\My Projects\IoT Gateway`. It álso contains the tools referenced from the build script to generate packages.
+	assumed it is cloned to `C:\My Projects\IoT Gateway`. It also contains the tools referenced from the build script to generate packages.
 	
 5.  Make the payment service the default *Startup Project*, and edit its *Debug Launch Profile* from *project properties*, so the folders match
 	the folders your Neuron was installed at.
