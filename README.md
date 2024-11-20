@@ -159,14 +159,14 @@ To simplify development, once the project is cloned, add a `FileFolder` referenc
 [gateway.config file](https://lab.tagroot.io/Documentation/IoTGateway/GatewayConfig.md). This allows you to test and run your changes to 
 Markdown, [back-end script](https://lab.tagroot.io/Script.md) and Javascript immediately, without having to synchronize the folder contents 
 with an external host, or recompile or go through the trouble of generating a distributable software package just for testing purposes. 
-Changes you make in .NET can be applied in runtime if you the *Hot Reload* permits, otherwise you need to recompile and re-run the application 
+Changes you make in .NET can be applied in runtime if *Hot Reload* permits, otherwise you need to recompile and re-run the application 
 again.
 
 Example of how to point a web folder to your project folder:
 
 ```
 <FileFolders>
-  <FileFolder webFolder="/TemplatePayment" folderPath="C:\My Projects\TemplatePaymentService\TAG.Payments.Template\Root\Template"/>
+  <FileFolder webFolder="/TemplatePayment" folderPath="C:\My Projects\TemplatePaymentService\TAG.Payments.Template\Root\TemplatePayment"/>
 </FileFolders>
 ```
 
@@ -175,6 +175,6 @@ Example of how to point a web folder to your project folder:
 **Note 2**:  Once the Neuron(R) is restarted, the source for the files is taken from the new location. Any changes you make 
 in the corresponding `ProgramData` subfolder will have no effect on what you see via the browser.
 
-**Note 3**: This file folder is only necessary on your developer machine, to give you real-time updates as you edit the files in your
+**Note 3**: This file folder is only necessary on your developer machine to give you real-time updates as you edit the files in your
 development folder. It is not necessary in a production environment, as the files are copied into the correct folders when the package 
 is installed.
