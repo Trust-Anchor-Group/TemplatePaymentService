@@ -121,14 +121,14 @@ TAG Neuron(R) to do this.
 
 ```
 IoTGateway\Utilities\Waher.Utility.Install\bin\Release\PublishOutput\win-x86\Waher.Utility.Install.exe
-	-p TAG.ContentServiceTemplate.package -k [AESKEY]
-	-m TemplateContentOnlyPackage\ContentServiceTemplate.manifest
+	-p TAG.PaymentServiceTemplate.package -k [AESKEY]
+	-m TemplatePaymentService\PaymentServiceTemplate.manifest
 
 IoTGateway\Utilities\Waher.Utility.Sign\bin\Release\PublishOutput\win-x86\Waher.Utility.Sign.exe 
 	-c ed448 
 	-priv [PRIVKEY]
-	-o TAG.ContentServiceTemplate.signature
-	-s TAG.ContentServiceTemplate.package
+	-o TAG.PaymentServiceTemplate.signature
+	-s TAG.PaymentServiceTemplate.package
 ```
 
 **Note**: The command line example above are only two commands, shown on multiple rows, for readability.
