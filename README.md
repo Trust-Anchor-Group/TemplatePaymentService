@@ -57,7 +57,7 @@ The solution contains the following C# projects:
 
 | Project                      | Framework         | Description |
 |:-----------------------------|:------------------|:------------|
-| `TAG.Payments.Template`      | .NET Standard 2.0 | Payment Mock service that works as a good starting point for developing new payment services for the TAG Neuron(R). |
+| `TAG.Payments.Template`      | .NET Standard 2.1 | Payment Mock service that works as a good starting point for developing new payment services for the TAG Neuron(R). |
 
 Nugets
 ---------
