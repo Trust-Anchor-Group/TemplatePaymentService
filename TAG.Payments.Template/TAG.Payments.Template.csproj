@@ -23,10 +23,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Paiwise" Version="3.5.0" />
-    <PackageReference Include="Waher.Content" Version="3.6.0" />
+    <PackageReference Include="Paiwise" Version="3.6.0" />
+    <PackageReference Include="Waher.Content" Version="3.6.1" />
     <PackageReference Include="Waher.Events" Version="1.4.7" />
-    <PackageReference Include="Waher.IoTGateway" Version="3.9.0" />
+    <PackageReference Include="Waher.IoTGateway" Version="3.9.1" />
     <PackageReference Include="Waher.Networking" Version="4.6.6" />
     <PackageReference Include="Waher.Runtime.Inventory" Version="1.4.6" />
     <PackageReference Include="Waher.Runtime.Settings" Version="1.2.2" />
